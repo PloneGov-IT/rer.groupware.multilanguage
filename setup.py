@@ -27,6 +27,8 @@ setup(name='rer.groupware.multilanguage',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
-      # -*- Entry points: -*-
+      # -*- entry_points -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
