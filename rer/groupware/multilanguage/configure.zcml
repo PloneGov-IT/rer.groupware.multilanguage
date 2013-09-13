@@ -45,6 +45,12 @@
     factory=".extender.GroupwareLanguageExtender" 
     for="Products.ATContentTypes.interface.interfaces.IATContentType" 
     provides="archetypes.schemaextender.interfaces.IOrderableSchemaExtender"    
-    name="language-extender"/>
+    name="groupware-extender"/>
+
+  <adapter 
+    factory=".extender.GroupwareRoomLanguageExtender" 
+    for="rer.groupware.room.interfaces.IGroupRoom" 
+    provides="archetypes.schemaextender.interfaces.IOrderableSchemaExtender"    
+    name="groupware-extender"/>
 
 </configure>
