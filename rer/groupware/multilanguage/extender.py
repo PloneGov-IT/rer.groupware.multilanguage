@@ -28,9 +28,10 @@ class GroupwareLanguageExtender(object):
                   accessor="Language",
                   schemata="categorization",
                   default_method='gpwDefaultLanguage',
-                  vocabulary='languages',
+                  vocabulary_factory='plone.app.vocabularies.SupportedContentLanguages',
                   widget=LanguageWidget(
                       label=_(u'label_language', default=u'Language'),
+                      format="select",
                       ),
               ),
             ]
@@ -58,9 +59,10 @@ class GroupwareRoomLanguageExtender(object):
                   accessor="Language",
                   schemata="default",
                   default_method='gpwDefaultLanguage',
-                  vocabulary='languages',
+                  vocabulary_factory='plone.app.vocabularies.SupportedContentLanguages',
                   widget=LanguageWidget(
                       label=_(u'label_language', default=u'Language'),
+                      format="select",
                       ),
               ),
             ]
