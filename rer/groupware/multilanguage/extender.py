@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from archetypes.schemaextender.field import ExtensionField
-from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender, IOrderableSchemaExtender
+from archetypes.schemaextender.interfaces import IBrowserLayerAwareExtender, ISchemaExtender
 from Products.Archetypes.atapi import StringField
 from Products.Archetypes.Widget import LanguageWidget
 from Products.ATContentTypes.interface.interfaces import IATContentType
@@ -20,7 +20,7 @@ class GroupwareLanguageExtender(object):
     Re-define language field and use a custom default method for all Content types
     """
     adapts(IATContentType)
-    implements(IOrderableSchemaExtender, IBrowserLayerAwareExtender)
+    implements(ISchemaExtender, IBrowserLayerAwareExtender)
     layer = IRERGroupwareMultilanguageLayer
 
     fields = [GroupwareStringField(
@@ -42,16 +42,13 @@ class GroupwareLanguageExtender(object):
     def getFields(self):
         return self.fields
 
-    def getOrder(self, original):
-            return original
-
 
 class GroupwareRoomLanguageExtender(object):
     """
     For groupware rooms, move language field in default schemata
     """
     adapts(IGroupRoom)
-    implements(IOrderableSchemaExtender, IBrowserLayerAwareExtender)
+    implements(ISchemaExtender, IBrowserLayerAwareExtender)
     layer = IRERGroupwareMultilanguageLayer
 
     fields = [GroupwareStringField(
@@ -72,6 +69,3 @@ class GroupwareRoomLanguageExtender(object):
 
     def getFields(self):
         return self.fields
-
-    def getOrder(self, original):
-            return original
