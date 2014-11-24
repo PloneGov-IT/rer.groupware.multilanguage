@@ -6,17 +6,19 @@ version = '0.1.2.dev0'
 setup(name='rer.groupware.multilanguage',
       version=version,
       description="A plugin for Groupware suite that add a multilanguage support for rooms",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
+        "Framework :: Plone",
+        "Framework :: Plone :: 4.2",
         "Programming Language :: Python",
         ],
       keywords='language rer groupware',
       author='RedTurtle Technology',
       author_email='sviluppoplone@redturtle.it',
-      url='http://svn.plone.org/svn/collective/',
+      url='https://github.com/PloneGov-IT/rer.groupware.multilanguage',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['rer', 'rer.groupware'],
